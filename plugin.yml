@@ -1,0 +1,22 @@
+name: LagKiller
+version: '${project.version}'
+main: de.lagkiller.LagPlugin
+api-version: '1.21'
+description: Erkennt Lag, zeigt Lagquellen an und entfernt sie.
+commands:
+  lag:
+    description: Lag entfernen / Lag-Infos
+    usage: /lag [info|exclude|include|list|tp|reload]
+permissions:
+  lag.clear:
+    description: /lag ausfuehren (Lagquellen loeschen)
+    default: op
+  lag.info:
+    description: /lag info
+    default: op
+  lag.admin:
+    description: Chunks ausschliessen, teleportieren, reload
+    default: op
+  lag.notify:
+    description: Lag-Warnungen erhalten
+    default: op

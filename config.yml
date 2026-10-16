@@ -1,0 +1,35 @@
+# Prefix vor allen Nachrichten (Farbcodes mit &)
+prefix: "&8[&cLag&8] &7"
+
+detection:
+  # Wie oft (Sekunden) TPS geprueft werden und das Redstone-Fenster zurueckgesetzt wird
+  check-interval-seconds: 5
+  # Unter diesem TPS-Wert gilt der Server als "laggy"
+  tps-threshold: 17.0
+  # Mindestabstand zwischen zwei Warnungen (Sekunden)
+  warn-cooldown-seconds: 60
+
+clear:
+  items: true
+  xp-orbs: true
+  projectiles: true       # Pfeile, Schneeballe usw.
+  # Mobs: pro Chunk bleiben maximal so viele, der Rest wird entfernt
+  mobs: true
+  max-mobs-per-chunk: 30
+  # Diese Entity-Typen werden nie entfernt (Bukkit EntityType-Namen)
+  protected-entity-types:
+    - VILLAGER
+    - WANDERING_TRADER
+    - IRON_GOLEM
+    - ARMOR_STAND
+    - ITEM_FRAME
+    - GLOW_ITEM_FRAME
+    - PAINTING
+  # ACHTUNG: entfernt Redstone-Bauteile (Staub, Repeater, Comparator, Observer)
+  # in Chunks mit extrem hoher Redstone-Aktivitaet. Standard: aus.
+  redstone: false
+  # Redstone-Updates pro Pruefzeitraum, ab denen ein Chunk als "Redstone-Lag" gilt
+  redstone-threshold: 1000
+
+# Wird automatisch vom Plugin verwaltet (/lag exclude, /lag include)
+excluded-chunks: []
